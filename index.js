@@ -311,3 +311,90 @@ function moveZeroes(nums) {
     }
       return nums
   }
+
+
+
+  
+// Javascript program to add two numbers
+// represented by linked list
+// Input: l1 = [2,4,3], l2 = [5,6,4]
+// Output: [7,0,8]
+// Explanation: 342 + 465 = 807.
+var head1, head2;
+
+class Node
+{
+	constructor(val)
+	{
+		this.data = val;
+		this.next = null;
+	}
+}
+var addTwoLists = function(first, second) {
+    var List = new Node(0);
+    var head = List;
+    var sum = 0;
+    var carry = 0;
+
+    while(first!==null||second!==null||sum>0){
+
+        if(first!==null){
+            sum = sum + first.data;
+            first = first.next;
+        }
+        // console.log(first)
+        if(second!==null){
+            sum = sum + second.data;
+            second = second.next;
+        }
+        if(sum>=10){
+            carry = 1;
+            sum = sum - 10;
+        }
+        // console.log("sum", sum)
+        head.next = new Node(sum);
+        head = head.next;
+
+        sum = carry;
+        carry = 0;
+
+    }
+    // console.log(List.next)
+    return List.next;
+};
+
+/* Utility function to print a
+linked list */
+function printList(head)
+{
+	while (head != null)
+	{
+		document.write(head.data + " ");
+		head = head.next;
+	}
+	document.write("<br/>");
+}
+
+// Driver Code
+// Creating first list
+head1 = new Node(7);
+head1.next = new Node(5);
+head1.next.next = new Node(9);
+head1.next.next.next = new Node(4);
+head1.next.next.next.next = new Node(6);
+document.write("First List is ");
+printList(head1);
+
+// Creating second list
+head2 = new Node(8);
+head2.next = new Node(4);
+document.write("Second List is ");
+printList(head2);
+
+// Add the two lists and see the
+// result
+rs = addTwoLists(head1, head2);
+document.write("Resultant List is ");
+printList(rs);
+// console.log(addTwoLists(head1, head2))
+// This code is contributed by aashish1995
