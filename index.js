@@ -430,6 +430,43 @@ printList(head2);
 // result
 rs = addTwoLists(head1, head2);
 document.write("Resultant List is ");
-printList(rs);
 // console.log(addTwoLists(head1, head2))
-// This code is contributed by aashish1995
+printList(rs);
+
+
+
+
+// Binary Tree Inorder Traversal
+// Input: root = [1,null,2,3]
+// Output: [1,3,2]
+
+
+function TreeNode(val) {
+    this.val = val;
+    this.left = this.right = null;
+}
+var root;
+function inorderTraversal(root) {
+ const stack = [];
+ const res = [];
+
+ while (root || stack.length) {
+   if (root) {
+     stack.push(root);
+     root = root.left;
+   } else {
+     root = stack.pop();
+     res.push(root.val);
+     root = root.right;
+   }
+ }
+
+ return res;
+}
+
+root = new TreeNode(1);
+root.left = new TreeNode(2);
+root.right = new TreeNode(3);
+root.left.left = new TreeNode(4);
+root.left.right = new TreeNode(5);
+console.log(inorderTraversal(root))
