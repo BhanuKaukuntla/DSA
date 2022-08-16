@@ -504,3 +504,89 @@ var findMedianSortedArrays = function(nums1, nums2) {
     }
     
 };
+
+
+
+// Remove Nth Node From End of List
+// Input: head = [1,2,3,4,5], n = 2
+// Output: [1,2,3,5]
+
+function Node(val) {
+    this.data = val;
+	this.next = null;
+}
+var RemoveNodeFromList = function(head, n) {
+        var start = new Node();
+        start.next = head;
+        var fast = start;
+        var slow = start;
+        for(let i=0;i<=n;i++){
+            fast = fast.next;
+        }
+        while(fast.next!= null){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return start.next;
+};
+
+/* Utility function to print a
+linked list */
+function printList(head)
+{
+	while (head != null)
+	{
+		document.write(head.data + " ");
+		head = head.next;
+	}
+	document.write("<br/>");
+}
+
+// Driver Code
+// Creating first list
+head1 = new Node(1);
+head1.next = new Node(2);
+head1.next.next = new Node(3);
+head1.next.next.next = new Node(4);
+head1.next.next.next.next = new Node(5);
+document.write("First List is ");
+printList(head1);
+
+// Add the two lists and see the
+// result
+let n = 2
+rs = RemoveNodeFromList(head1, n-1);
+document.write("Resultant List is ");
+// console.log(addTwoLists(head1, head2))
+printList(rs);
+
+
+
+
+// Valid Parentheses
+// Input: s = "()[]{}"
+// Output: true
+// Input: s = "(]"
+// Output: false
+
+var isValid = function(s) {
+    let map = {
+        ")": "(",
+        "]": "[",
+        "}": "{"
+    }
+    let arr = [];
+    for(let i = 0; i < s.length; i ++){
+        if(s[i] === "(" || s[i] === "[" || s[i] === "{"){
+            arr.push(s[i]);
+        }
+        else{
+            if(arr[arr.length - 1] === map[s[i]]){
+                arr.pop();
+            }
+            else return false;
+        }
+    }
+    return arr.length === 0 ? true : false;
+};
