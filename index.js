@@ -1,3 +1,4 @@
+// 1
 // Two Sum
 // Input: nums = [2,7,11,15], target = 9
 // Output: [0,1]
@@ -14,6 +15,7 @@ const twoSum = (nums, target) => {
     }
   };
 
+// 2
 // Longest Substring Without Repeating Characters
 // Input: s = "abcabcbb"
 // Output: 3
@@ -35,6 +37,7 @@ var lengthOfLongestSubstring = function(s) {
 };
 
 
+// 3
 // Container With Most Water
 // Input: height = [1,8,6,2,5,4,8,3,7]
 // Output: 49
@@ -57,6 +60,7 @@ var lengthOfLongestSubstring = function(s) {
 };
 
 
+// 4
 // Roman to Integer
 // Input: s = "III"
 // Output: 3
@@ -80,6 +84,7 @@ var romanToInt = function(s) {
 };
 
 
+// 5
 // 3Sum
 // Input: nums = [-1,0,1,2,-1,-4]
 // Output: [[-1,-1,2],[-1,0,1]]
@@ -170,6 +175,7 @@ function threeSum(nums) {
 };
 
 
+// 6
 // Search in Rotated Sorted Array
 // Input: nums = [4,5,6,7,0,1,2], target = 0
 // Output: 4
@@ -185,7 +191,7 @@ function threeSum(nums) {
 };
 
 
-
+// 7
 // Trapping Rain Water
 // Input: height = [4,2,0,3,2,5]
 // Output: 9
@@ -210,6 +216,7 @@ function threeSum(nums) {
 };
 
 
+// 8
 // Best Time to Buy and Sell Stock
 // Input: prices = [7,1,5,3,6,4]
 // Output: 5
@@ -227,6 +234,7 @@ var maxProfit = function(prices) {
 };
 
 
+// 9
 // Majority Element
 // Input: nums = [3,2,3]
 // Output: 3
@@ -253,6 +261,7 @@ nums = [3,2,3]
 console.log(majorityElement(nums))
 
 
+// 10
 // Contains Duplicate
 // Input: nums = [1,2,3,1]
 // Output: true
@@ -276,7 +285,7 @@ var containsDuplicate = function(nums) {
     return ans
 };
 
-
+// 11
 // Missing Number
 // Input: nums = [3,0,1]
 // Output: 2
@@ -295,7 +304,7 @@ var missingNumber = function(nums) {
 };
 
 
-
+// 12
 // Move Zeroes
 // Input: nums = [0,1,0,3,12]
 // Output: [1,3,12,0,0]
@@ -312,7 +321,7 @@ function moveZeroes(nums) {
       return nums
   }
 
-
+// 13
 // Longest Palindromic Substring
 // Input: s = "babad"
 // Output: "bab"
@@ -350,6 +359,7 @@ function moveZeroes(nums) {
     return lps;
 }
   
+// 14
 // Javascript program to add two numbers
 // represented by linked list
 // Input: l1 = [2,4,3], l2 = [5,6,4]
@@ -435,7 +445,7 @@ printList(rs);
 
 
 
-
+// 15
 // Binary Tree Inorder Traversal
 // Input: root = [1,null,2,3]
 // Output: [1,3,2]
@@ -472,7 +482,7 @@ root.left.right = new TreeNode(5);
 console.log(inorderTraversal(root))
 
 
-
+// 16
 // Median of Two Sorted Arrays
 // Input: nums1 = [1,3], nums2 = [2]
 // Output: 2.00000
@@ -506,7 +516,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
 };
 
 
-
+// 17
 // Remove Nth Node From End of List
 // Input: head = [1,2,3,4,5], n = 2
 // Output: [1,2,3,5]
@@ -563,7 +573,7 @@ printList(rs);
 
 
 
-
+// 18
 // Valid Parentheses
 // Input: s = "()[]{}"
 // Output: true

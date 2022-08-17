@@ -1,3 +1,4 @@
+// 1
 // Reverse Integer
 // Example 1:
 
@@ -25,7 +26,7 @@ public:
 };
 
 
-
+// 2
 // String to Integer (atoi)
 // Input: s = "   -42"
 // Output: -42
@@ -50,7 +51,7 @@ int myAtoi(string str) {
 }
 
 
-
+// 3
 // Longest Palindromic Substring
 // Input: s = "babad"
 // Output: "bab"
@@ -93,7 +94,7 @@ int main() {
     return 0;
 }
 
-
+// 4
 // Longest Common Prefix
 // Input: strs = ["flower","flow","flight"]
 // Output: "fl"
