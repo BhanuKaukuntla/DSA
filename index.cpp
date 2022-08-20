@@ -161,4 +161,70 @@ public:
 };
 
 
+// 6
+// Merge k Sorted Lists
+// Input: lists = [[1,4,5],[1,3,4],[2,6]]
+// Output: [1,1,2,3,4,4,5,6]
 
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+struct compare {
+    bool operator()(const ListNode* l, const ListNode* r) {
+        return l->val > r->val;
+    }
+};
+class Solution {
+public:
+ListNode *mergeKLists(vector<ListNode *> &lists) { //priority_queue
+    priority_queue<ListNode *, vector<ListNode *>, compare> q;
+    ListNode* dummy = new ListNode(-1);
+    ListNode* tail = dummy;
+    for(int i=0;i<lists.size();i++) {
+        if(lists[i] != NULL)  q.push(lists[i]);
+    }           
+    while(!q.empty()) {
+        ListNode* temp = q.top();
+        tail->next = temp;
+        tail=temp;
+        q.pop();
+        if(temp->next !=NULL) q.push(temp->next);
+    }
+    return dummy->next;
+}
+};
+
+
+// 7
+// Remove Duplicates from Sorted Array
+// Input: nums = [1,1,2]
+// Output: nums = [1,2]
+
+
+
+class Solution{
+    public:
+    ListNode* deleteDuplicates(ListNode* head){
+        if(head == NULL || head->next == NULL){
+            return head;
+        }
+        ListNode* temp = head;
+        while(temp->next != NULL){
+            if(temp->val == temp->next->val){
+                ListNode* del = temp->next;
+                temp->next = del->next;
+                delete del;
+            }else{
+                temp=temp->next;
+            }
+        }
+        return head;
+    }
+}
