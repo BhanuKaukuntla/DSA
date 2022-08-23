@@ -300,7 +300,7 @@ int main() {
 }
 
 
-
+// 9
 // Count and Say
 // Input: n = 4
 // Output: "1211"
@@ -329,7 +329,7 @@ string countAndSay(int n, string s = "1") { // initial value of the string is "1
 }
 
 
-
+10
 First Missing Positive
 Input: nums = [3,4,-1,1]
 Output: 2
@@ -348,5 +348,36 @@ public:
             if(i+1!=nums[i])    return i+1;
         }
         return nums.size()+1;
+    }
+};
+
+
+11
+Letter Combinations of a Phone Number
+Input: digits = "23"
+Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+
+
+class Solution {
+public:
+    vector<string> letterCombinations(string digits) {
+        vector<string> combs;
+        string comb;
+        combine(digits, 0, comb, combs);
+        return combs;
+    }
+private:
+    vector<string> dict = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    
+    void combine(string digits, int i, string comb, vector<string>& combs) {
+        if (i == digits.size()) {
+            if (!comb.empty()) {
+                combs.push_back(comb);
+            }
+        } else {
+            for (char c : dict[digits[i] - '0']) {
+                combine(digits, i + 1, comb + c, combs);
+            }
+        }
     }
 };
