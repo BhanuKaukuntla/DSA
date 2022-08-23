@@ -329,10 +329,10 @@ string countAndSay(int n, string s = "1") { // initial value of the string is "1
 }
 
 
-10
-First Missing Positive
-Input: nums = [3,4,-1,1]
-Output: 2
+// 10
+// First Missing Positive
+// Input: nums = [3,4,-1,1]
+// Output: 2
 
 class Solution {
 public:
@@ -352,10 +352,10 @@ public:
 };
 
 
-11
-Letter Combinations of a Phone Number
-Input: digits = "23"
-Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+// 11
+// Letter Combinations of a Phone Number
+// Input: digits = "23"
+// Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
 
 
 class Solution {
