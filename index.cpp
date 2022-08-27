@@ -537,3 +537,36 @@ public:
     }
 };
 
+
+
+// 17
+// Pow(x, n)
+// Input: x = 2.00000, n = 10
+// Output: 1024.00000
+
+
+class Solution {
+public:
+    double myPow(double x, int n) {
+        
+        if(n < 0) {
+            x = 1 / x;
+        } 
+        
+        long num = labs(n);
+        
+        double pow = 1;
+        
+        while(num){ // equivalent to while(num != 0)
+            if(num & 1) { // equivalent to if((num & 1) != 0)
+                pow *= x;
+            }
+            
+            x *= x;
+            num >>= 1;
+        }
+        
+        return pow;
+    }
+};
+
