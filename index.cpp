@@ -382,7 +382,62 @@ private:
     }
 };
 
+// 12
+// Find First and Last Position of Element in Sorted Array
+// Input: nums = [5,7,7,8,8,10], target = 8
+// Output: [3,4]
+ 
+
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        return {BinarySearch(nums, target, "FIRST"), BinarySearch(nums, target, "LAST")};
+    }
+    
+    int BinarySearch(vector<int> nums, int num, string find) {
+        int left = 0, right = nums.size() - 1, mid;
+        int result = -1;
+
+        while (left <= right) {
+            mid = (left + right) / 2;
+
+            if (nums[mid] == num) {
+                result = mid;
+                (find == "FIRST") ? right = mid - 1 : left = mid + 1;
+            }
+            else if (nums[mid] > num) {
+                right = mid - 1;
+            }
+            else {
+                left = mid + 1;
+            }
+        }
+
+        return result;
+    }
+};
 
 
 
-//12 Generate Parenthesis 
+
+// 13
+// Generate Paranthesis
+// Input: n = 3
+// Output: ["((()))","(()())","(())()","()(())","()()()"]
+
+class Solution{
+    public:
+    vector<string> generateParenthesis(int n){
+        vector<string> ans;
+        func(ans, n, 0, 0, "");
+        return ans;
+    }
+    void func(vector<string>& ans, int n, int open, int close, string curr_str){
+        if(curr_str.size() == n*2){
+            ans.push_back(curr_str);
+            return;
+        }
+        if(open<n) func(ans, open+1, close, curr_str+"(");
+        if(close<open) func(ans, open, close+1, curr_str+")");
+    }
+}
