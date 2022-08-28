@@ -3,3 +3,7 @@ Implement  strstr
 Wildcard matching 
 Divide two integers
 Minimum Window Substring
+Word Search
+Largest Rectangle in Histogram
+Decode Ways
+Validate Binary Search Tree
