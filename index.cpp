@@ -755,3 +755,33 @@ public:
         return digits;
     }
 };
+
+
+
+
+// 24
+// Sqrt(x)
+// Input: x = 8
+// Output: 2
+// Explanation: The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.
+
+
+class Solution {
+public:
+    int mySqrt(int x) {
+        if(x <= 1)
+            return x;
+
+        int l = 0, r = x;
+        while(l <= r){
+            int m = l + (r-l)/2;
+            if(x / m == m)
+                return m;
+            else if(x / m < m)
+                r = m-1;
+            else
+                l = m+1;
+        }
+        return r;
+    }
+};
