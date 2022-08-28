@@ -645,3 +645,20 @@ int main() {
 
   return 0;
 }
+
+// 20
+// Jump Game
+// Input: nums = [2,3,1,1,4]
+// Output: true
+// Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+
+bool canJump(vector<int>& nums) {
+      int n = nums.size(), farest = 0;
+      for(int i = 0;i < n; i++)
+      {
+        if(farest < i) return false;
+        farest = max(i + nums[i], farest);
+      }
+      
+      return true;
+    }
