@@ -24,7 +24,10 @@ void InsertAtHead(node* &head, int val){
 
 void InsertAtTail(node* &head, int val){
     node* n = new node(val);
-
+    if(head == NULL){
+        head = n;
+        return;
+    }
     node* temp = head;
     while(temp->next!=NULL){
         temp= temp->next;
@@ -304,7 +307,10 @@ void InsertAtHead(node* &head, int val){
 
 void InsertAtTail(node* &head, int val){
     node* n = new node(val);
-
+    if(head == NULL){
+        head = n;
+        return;
+    }
     node* temp = head;
     while(temp->next!=NULL){
         temp= temp->next;
