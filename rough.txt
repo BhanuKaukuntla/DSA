@@ -11,3 +11,4 @@ Validate Binary Search Tree
 
 --> Need to Practice
 2,5,6,7,16
+6,16,17
