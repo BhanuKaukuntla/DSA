@@ -1199,3 +1199,27 @@ int main() {
     int maxPro = maxProfit(arr);
     cout << "Max profit is: " << maxPro << endl;
 }
+
+
+
+// 38
+// Majority Element
+// Input: nums = [3,2,3]
+// Output: 3
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int count = 0;
+        int candidate = 0;
+
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+            }
+            if(num==candidate) count += 1; 
+            else count -= 1; 
+        }
+
+        return candidate;
+    }
+};
