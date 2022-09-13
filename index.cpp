@@ -1168,3 +1168,34 @@ int main() {
   arr = {0,1,0,2,1,0,1,3,2,1,2,1};
   cout << "The water that can be trapped is " << trap(arr) << endl;
 }
+
+
+
+// 37
+// Best Time to Buy and Sell Stock
+// Input: prices = [7,1,5,3,6,4]
+// Output: 5
+// Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+// Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+	
+#include<bits/stdc++.h>
+using namespace std;
+
+int maxProfit(vector<int> &arr) {
+    int maxPro = 0;
+    int n = arr.size();
+    int minPrice = INT_MAX;
+
+    for (int i = 0; i < arr.size(); i++) {
+        minPrice = min(minPrice, arr[i]);
+        maxPro = max(maxPro, arr[i] - minPrice);
+    }
+    
+    return maxPro;
+}
+
+int main() {
+    vector<int> arr = {7,1,5,3,6,4};
+    int maxPro = maxProfit(arr);
+    cout << "Max profit is: " << maxPro << endl;
+}
