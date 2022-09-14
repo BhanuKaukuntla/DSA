@@ -1252,3 +1252,41 @@ int main() {
   arr = {1,3,4,2,3};
   cout << "The duplicate element is " << findDuplicate(arr) << endl;
 }
+
+
+// 40
+// Missing Number
+// Input: nums = [3,0,1]
+// Output: 2
+// Explanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.
+
+// Input Format:  array[] = {3,1,2,5,3}
+
+// Result: {3,4)
+
+// Explanation: A = 3 , B = 4 
+// Since 3 is appearing twice and 4 is missing
+
+vector<int>missing_repeated_number(const vector<int> &A) {
+    long long int len = A.size();
+
+    long long int S = (len * (len+1) ) /2;
+    long long int P = (len * (len +1) *(2*len +1) )/6;
+    long long int missingNumber=0, repeating=0;
+     
+    for(int i=0;i<A.size(); i++){
+       S -= (long long int)A[i];
+       P -= (long long int)A[i]*(long long int)A[i];
+    }
+     
+    missingNumber = (S + P/S)/2;
+
+    repeating = missingNumber - S;
+
+    vector <int> ans;
+
+    ans.push_back(repeating);
+    ans.push_back(missingNumber);
+
+    return ans;
+}
