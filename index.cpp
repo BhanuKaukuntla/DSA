@@ -1802,3 +1802,68 @@ public:
         return 1 + max(lh, rh); 
     }
 };
+
+
+// 51
+// Convert Sorted Array to Binary Search Tree
+// Input: nums = [-10,-3,0,5,9]
+// Output: [0,-3,9,-10,null,5]
+// Explanation: [0,-10,5,null,-3,null,9] is also accepted:
+
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Node{
+    int data;
+    Node *left, *right;
+    Node(int val){
+        data = val;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+Node* sortedArrayByBST(int arr[], int start, int end){
+    if(start>end){
+        return NULL;
+    }
+    int mid = (start + end)/2;
+    Node* root = new Node(arr[mid]);
+    root->left = sortedArrayByBST(arr, start, mid-1);
+    root->right = sortedArrayByBST(arr, mid+1, end);
+}
+
+void preOrderPrint(Node* root){
+    if(root == NULL){
+        return;
+    }
+    cout<<root->data<<" ";
+    preOrderPrint(root->left);
+    preOrderPrint(root->right);
+}
+
+int main(){
+    int arr[] = {10,20,30,40,50};
+    Node* root = sortedArrayByBST(arr, 0, 4);
+    preOrderPrint(root);
+    cout<<endl;
+    return 0;
+}
+
+
+// 52
+// Pascal's Triangle
+// Input: numRows = 5
+// Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+
+vector<vector<int>> generate(int numRows) {
+	vector<vector<int>> ret;
+	for (int i = 0; i < numRows; i++) {
+		vector<int> row(i + 1, 1);
+		for (int j = 1; j < i; j++) {
+			row[j] = ret[i - 1][j] + ret[i - 1][j - 1];
+		}
+		ret.push_back(row);
+	}
+	return ret;
+}
