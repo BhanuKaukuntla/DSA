@@ -444,7 +444,12 @@ document.write("Resultant List is ");
 printList(rs);
 
 
-or 
+or
+
+//  * function ListNode(val) {
+//  *     this.val = val;
+//  *     this.next = null;
+//  * }
 
 var addTwoNumbers = function(l1, l2) {
     var List = new ListNode(0);
