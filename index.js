@@ -681,8 +681,8 @@ var isValid = function(s) {
 
 
 
-19
-reverse
+// 19
+// reverse
 
 var reverse = function(x) {
   let ans = Math.abs(x).toString().split('').reverse().join('')
@@ -710,8 +710,8 @@ while(x>0) {
 return reversedInt;
 	
 	
-20
-atoi
+// 20
+// atoi
 
 var myAtoi = function(str) {
     return Math.max(Math.min(parseInt(str) || 0, 2147483647), -2147483648)
