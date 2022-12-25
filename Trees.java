@@ -1,5 +1,5 @@
 // 1
-// Binary Search Tree operations in Java
+// Binary Search Tree operations 
 
 class BinarySearchTree {
   class Node {
